@@ -547,6 +547,17 @@ input a.resetFilter {
   max-height: 400px;
 }
 
+#dialogHelp .modal-header {
+  height: 97px;
+}
+
+#dialogHelp .modal-body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 400px;
+  max-height: 400px;
+}
+
 /* END Bootstap modals fullscreen on small screen */
 
 /* Tablet optimization */

@@ -289,6 +289,23 @@ define(function(require, exports, module) {
     });
   };
 
+  var showHelpDialog = function() {
+    require([
+      'text!templates/ShowHelpDialog.html',
+      'tsoptions'
+    ], function(uiTPL, controller) {
+      if ($('#dialogHelp').length < 1) {
+        var uiTemplate = Handlebars.compile(uiTPL);
+        $('body').append(uiTemplate({isProVersion: TSCORE.PRO ? true : false}));
+
+        controller.initUI();
+      }
+      $('#dialogHelp').i18n();
+      controller.reInitUI();
+    });
+  };
+
+
   var showWelcomeDialog = function() { startGettingStartedTour(); };
 
   var startGettingStartedTour = function() {
