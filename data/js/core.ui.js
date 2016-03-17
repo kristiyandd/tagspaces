@@ -970,6 +970,7 @@ define(function(require, exports, module) {
   exports.showTagEditDialog = showTagEditDialog;
   exports.showOptionsDialog = showOptionsDialog;
   exports.showAboutDialog = showAboutDialog;
+  exports.showHelpDialog = showHelpDialog;
   exports.showLocationsPanel = showLocationsPanel;
   exports.showTagsPanel = showTagsPanel;
   exports.showContactUsPanel = showContactUsPanel;

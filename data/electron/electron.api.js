@@ -149,7 +149,7 @@ define(function(require, exports, module) {
             label: $.i18n.t("ns.common:aboutTagSpaces"),
             accelerator: "F1",
             click: function() {
-              TSCORE.UI.showAboutDialog();
+              TSCORE.UI.showHelpDialog();
             }
           }
         ]
