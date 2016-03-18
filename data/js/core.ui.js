@@ -293,15 +293,23 @@ define(function(require, exports, module) {
     require([
       'text!templates/ShowHelpDialog.html',
       'tsoptions'
-    ], function(uiTPL, controller) {
+    ], function(uiTPL) {
+        $('#dialogHelp').modal({
+        backdrop: 'static',
+        show: true
+});
+$('#dialogHelp').draggable({
+      handle: ".modal-header"
+    });
+
+  $('#dialogHelp').on('show.bs.modal', function() {
+  var boxInput = TSCORE.Config.getSelectAllKeyBinding();
+  $("#dialogHelp").find('.modal-body').html(boxInput);
+});     
       if ($('#dialogHelp').length < 1) {
         var uiTemplate = Handlebars.compile(uiTPL);
         $('body').append(uiTemplate({isProVersion: TSCORE.PRO ? true : false}));
-
-        controller.initUI();
       }
-      $('#dialogHelp').i18n();
-      controller.reInitUI();
     });
   };
 
